@@ -10,6 +10,4 @@ public interface CourseService {
     List<CourseDTO> getAllCourses();
     CourseDTO updateCourse(Long id, CourseDTO courseDTO);
     void deleteCourse(Long id);
-    void registerUserToCourse(Long userId, Long courseId);
-    void unregisterUserFromCourse(Long userId, Long courseId);
 }

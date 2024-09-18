@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -14,9 +15,10 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+    // Sample endpoint to get a list of courses
     @GetMapping
-    public List<CourseDTO> getAllCourses() {
-        return courseService.getAllCourses();
+    public List<String> getAllCourses() {
+        return Arrays.asList("Course 1", "Course 2", "Course 3");
     }
 
     @GetMapping("/{id}")
@@ -40,15 +42,15 @@ public class CourseController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{courseId}/register/{userId}")
-    public ResponseEntity<Void> registerUserToCourse(@PathVariable Long courseId, @PathVariable Long userId) {
-        courseService.registerUserToCourse(userId, courseId);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/{courseId}/unregister/{userId}")
-    public ResponseEntity<Void> unregisterUserFromCourse(@PathVariable Long courseId, @PathVariable Long userId) {
-        courseService.unregisterUserFromCourse(userId, courseId);
-        return ResponseEntity.noContent().build();
-    }
+//    @PostMapping("/{courseId}/register/{userId}")
+//    public ResponseEntity<Void> registerUserToCourse(@PathVariable Long courseId, @PathVariable Long userId) {
+//        courseService.registerUserToCourse(userId, courseId);
+//        return ResponseEntity.ok().build();
+//    }
+//
+//    @DeleteMapping("/{courseId}/unregister/{userId}")
+//    public ResponseEntity<Void> unregisterUserFromCourse(@PathVariable Long courseId, @PathVariable Long userId) {
+//        courseService.unregisterUserFromCourse(userId, courseId);
+//        return ResponseEntity.noContent().build();
+//    }
 }

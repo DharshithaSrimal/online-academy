@@ -11,6 +11,6 @@ public class CourseDTO {
     private Long id;
     private String title;
     private String description;
-    private String categoryName;
+    private Long categoryId; // Use category ID instead of name
     private double price;
 }
