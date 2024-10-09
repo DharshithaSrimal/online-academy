@@ -17,7 +17,7 @@ public class SecurityConfig {
         return http
                 //ALl the requests should be authenticted
                 .authorizeHttpRequests(auth->{
-                        auth.requestMatchers("/").permitAll();
+                        auth.requestMatchers("/").permitAll();//public
                         auth.anyRequest().authenticated();})
                 //Default login
                 .formLogin(Customizer.withDefaults())

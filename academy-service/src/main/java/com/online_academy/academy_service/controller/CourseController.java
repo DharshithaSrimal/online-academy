@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173") 
 @RequestMapping("/api/courses")
 public class CourseController {
     @Autowired
@@ -17,8 +18,8 @@ public class CourseController {
 
     // Sample endpoint to get a list of courses
     @GetMapping
-    public List<String> getAllCourses() {
-        return Arrays.asList("Course 1", "Course 2", "Course 3");
+    public List<CourseDTO> getAllCourses() {
+        return ResponseEntity.ok(courseService.getAllCourses()).getBody();
     }
 
     @GetMapping("/{id}")

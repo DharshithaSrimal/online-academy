@@ -11,6 +11,7 @@ import com.online_academy.academy_service.model.UserCourse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 //import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -26,6 +27,9 @@ public class CourseServiceImpl implements CourseService{
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private RestTemplate template;
 
     @Override
     public CourseDTO createCourse(CourseDTO courseDTO) {
@@ -51,9 +55,10 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public List<CourseDTO> getAllCourses() {
-        return courseRepository.findAll().stream()
+        List<CourseDTO> courses =  courseRepository.findAll().stream()
                 .map(course -> modelMapper.map(course, CourseDTO.class))
                 .collect(Collectors.toList());
+        return courses;
     }
 
     @Override
