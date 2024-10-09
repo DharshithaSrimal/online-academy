@@ -1,20 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+// src/App.tsx
+import React from 'react';
+import './App.css';
+import Courses from './components/Courses';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+    return (
+        <div className="App">
+            <Courses />
+        </div>
+    );
+};
 
-  return (
-    <>
-    
-      <h1>Online Academy</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
-  )
-}
-
-export default App
+export default App;
