@@ -14,7 +14,6 @@ public class UserCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long userId;  // user ID from User Management Service
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,7 +1,7 @@
 // src/services/apiService.ts
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8082/api'; // Replace with your actual API base URL
+const API_BASE_URL = 'http://localhost:8082/api'; // Academy micro service
 
 // Function to fetch all courses
 export const getCourses = async () => {

@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: academy-service
+          uri: lb://ACADEMY-SERVICE
+          predicates:
+            - Path=/courses/**
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+
+server:
+  port: 8989
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
+#
+#hystrix:
+#  command:
+#    fallbackcmd:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000

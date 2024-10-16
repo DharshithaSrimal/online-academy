@@ -1,13 +1,13 @@
-package com.online_academy.cloud_gateway;
+package com.cloud_gateway.academy_gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CloudGatewayApplication {
+public class AcademyGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudGatewayApplication.class, args);
+		SpringApplication.run(AcademyGatewayApplication.class, args);
 	}
 
 }

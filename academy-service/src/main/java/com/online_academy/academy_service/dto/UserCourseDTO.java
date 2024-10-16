@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserCourseDTO {
     private Long id;
-    private Long userId;
-    private Long courseId;
+    private UserDTO userDTO;
+    private CourseDTO courseDTO;
 }

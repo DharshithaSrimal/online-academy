@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173") 
-@RequestMapping("/api/courses")
+@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/courses")
 public class CourseController {
     @Autowired
     private CourseService courseService;
